@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZRA TaxPaye Calculator </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <!-- Paye Calculator Form -->
+        <h1 class="headers">Paye Calculator</h1>
+        <div class="paye">
+                <div class="inputFields">
+                    <label for="basicPay"><strong>Basic Pay</strong></label>
+                    <input type="number" id="basicPay" placeholder="Enter Salary">
+                </div>
+                <div class="inputFields">
+                    <label for="allowance"><strong>Allowances</strong></label>
+                    <input type="number" id="allowance" name="allowance" placeholder="Enter Allowances"><br><br><br>
+                </div>
+                <!-- Display Results -->
+            <p>Gross/Taxable Pay <span>&nbsp;&nbsp;&nbsp;&nbsp;K<span id="grossValue">0</span></span></p>
+
+            <div class="inputFields">
+                <label for="statutoryContribution">
+                    <strong>Statutory<br>Contribution</strong>
+                </label>
+                <input type="number" id="statutoryContribution" placeholder="Enter allowances">
+            </div>
+
+            <!-- Display Deductions -->
+            <p>Napsa 5% <span>K<span id="napsaValue">100.00</span></span></p><br>
+            <p>Natonal Health Insurance<span>&nbsp;&nbsp;&nbsp;&nbsp;K<span id="nationalHealthInsuranceValue">0.00</span></span></p><br>
+            <hr>
+
+            <!--Display Total Contributions and Deductions --> 
+            <div class="total">
+            <p>Total Contribution <span>&nbsp;&nbsp;&nbsp;&nbsp;K<span id="totalContributionValue">0.00</span></span></p>
+            <p>Total Tax Dedactions <span>&nbsp;&nbsp;&nbsp;&nbsp;K<span id="totalTaxDeductionsValue">0.00</span></span></p>
+            <p>Total Deductions <span>&nbsp;&nbsp;&nbsp;&nbsp;K<span id="totalDeductionsValue">0.00</span></span></p>
+
+            </div>
+            <!-- Display Net Pay -->
+            <h2 class="headers" id="netPay">Net Pay <span>&nbsp;&nbsp;&nbsp;&nbsp;K<span id="netPayValue">0.00</span></span></h2>
+        </div>
+
+        <div>
+
+            <!-- PAYE Tax Computation Bands -->
+            <table border="1">
+            <caption><strong>PAYE TAX COMPUTATION BANDS 2026</strong></caption>
+
+            <!-- The tax due values will be calculated and updated dynamically using JavaScript based on the gross pay input by the user. --->
+                <tr>
+                    <th>Tax Bands</th>
+                    <th>Chargeable Income</th>
+                    <th>Tax Rate</th>
+                    <th>Tax Due</th>
+                </tr>
+               
+                <!-- The tax due values will be calculated and updated dynamically using JavaScript based on the gross pay input by the user. --->
+                <tr>
+                    <td>First K5,100.00 @</td>
+                    <td>0</td>
+                    <td>0%</td> 
+                    <td>0</td>
+                </tr>
+
+                <!-- The tax due values will be calculated and updated dynamically using JavaScript based on the gross pay input by the user. --->
+                <tr>
+                    <td>Next K5,100.01 but not exceeding K7,100.00</td>
+                    <td>0</td>
+                    <td>20%</td>
+                    <td>0</td>
+                </tr>
+                <!-- The tax due values will be calculated and updated dynamically using JavaScript based on the gross pay input by the user. --->
+                <tr>
+                    <td>Next K7,100.01 but not exceeding K9,200.00</td>
+                    <td>0</td>
+                    <td>30%</td>
+                    <td>0</td>
+                </tr>
+                <!-- The tax due values will be calculated and updated dynamically using JavaScript based on the gross pay input by the user. --->
+                 <tr>
+                    <td>K9,200.01 and Above</td>
+                    <td>0</td>
+                    <td>37%</td>
+                    <td>0</td>
+            </table > 
+
+            <!-- Note -->
+            <p id="Note">Note: Gross pay shows the tax band category used to calculate your tax</p>
+            <hr>
+            <!-- Clear Button -->
+            <button type="reset" id="clear">Clear</button>
+
+        </div>
+    </div>
+
+    </form>
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
